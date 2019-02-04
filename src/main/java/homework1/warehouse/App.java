@@ -1,4 +1,4 @@
-package warehouse;
+package homework1.warehouse;
 
 public class App {
     public static void main(String[] args) {
