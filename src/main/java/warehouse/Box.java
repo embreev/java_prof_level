@@ -1,40 +1,30 @@
 package warehouse;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Box<T> {
+class Box<T extends Fruit> {
     private ArrayList<T> boxAL;
-    private int quantity;
-    private T obj;
 
-    public Box(int quantity) {
-        this.quantity = quantity;
-        this.boxAL.add(obj);
+    public Box(T... arr) {
+        boxAL = new ArrayList<T>(Arrays.asList(arr));
     }
 
-//    boolean compare(Box box) {
-//        return this.getWeight(this.boxAL.size(), this.obj) == box.getWeight(box.boxAL.size(), box.obj);
-//    }
-
-//    private float getWeight(int quantity, T obj) {
-//        return quantity * obj.getWeigth();
-//    }
-
-    void addFruit(Box box, int quantity) {
-        if (this.obj.getClass() == obj.getClass()) {
-            for (int i = 0; i < quantity; i++) {
-                this.boxAL.add(this.obj);
-            }
-        } else {
-            System.out.println("Смешивать фрукты нельзя!");
-        }
+    public float getWeight() {
+        if (boxAL.size() == 0) return 0.0f;
+        return boxAL.get(0).getWeight() * boxAL.size();
     }
 
-    void pourFruit(Box box) {
-        if (this.obj.getClass() == box.obj.getClass()) {
-            this.boxAL.addAll(box.boxAL);
-        } else {
-            System.out.println("Смешивать фрукты нельзя!");
-        }
+    public void addFruit(T fruit) {
+        boxAL.add(fruit);
+    }
+
+    public boolean compare(Box box) {
+        return Math.abs(this.getWeight() - box.getWeight()) < 0.00001f;
+    }
+
+    public void pourFruit(Box<? super T> box) {
+        box.boxAL.addAll(this.boxAL);
+        this.boxAL.clear();
     }
 }
