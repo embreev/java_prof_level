@@ -1,4 +1,4 @@
-package warehouse;
+package homework1.warehouse;
 
 abstract class Fruit {
     private float weight;

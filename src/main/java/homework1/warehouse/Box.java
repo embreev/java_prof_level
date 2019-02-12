@@ -1,4 +1,4 @@
-package warehouse;
+package homework1.warehouse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
