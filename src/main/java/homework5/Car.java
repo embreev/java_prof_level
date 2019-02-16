@@ -28,8 +28,8 @@ public class Car implements Runnable {
         try {
             System.out.println(this.name + " готовится");
             Thread.sleep(100 + (int) (Math.random() * 100));
-            cdlPrep.countDown();
             System.out.println(this.name + " готов");
+            cdlPrep.countDown();
             cdlStart.await();
         } catch (Exception e) {
             e.printStackTrace();
@@ -37,8 +37,9 @@ public class Car implements Runnable {
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
+//        System.out.println(this.name + " " + cdlFinish.getCount());
         if (cdlFinish.getCount() == CARS_COUNT) {
-            System.out.println(this.name + " >>> WINNER!!!");
+            System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> " + this.name + " WINNER!!!");
         }
 
         cdlFinish.countDown();
