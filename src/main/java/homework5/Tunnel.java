@@ -1,8 +1,8 @@
 package homework5;
 
 public class Tunnel extends Stage {
-    public Tunnel() {
-        this.length = 80;
+    public Tunnel(int length) {
+        this.length = length;
         this.description = "Тоннель " + length + " метров";
     }
     @Override
