@@ -31,7 +31,7 @@ public class MainClass {
         return result;
     }
 
-    public static int[] getArr (int[] arr) {
+    public static int[] splitArrByFour(int[] arr) {
         int[] arrTmp;
         if (!checkArrayFour(arr)) {
             throw new MyException("RuntimeException");
@@ -51,7 +51,7 @@ public class MainClass {
 
     public static void main(String[] args) {
         //2
-        int [] arrNew = getArr(arr);
+        int [] arrNew = splitArrByFour(arr);
         for (int i = 0; i < arrNew.length; i++) {
             System.out.print(arrNew[i] + " ");
         }
