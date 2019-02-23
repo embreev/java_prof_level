@@ -47,12 +47,10 @@ public class Server {
 
     public void subscribe(ClientHandler client) {
         clients.add(client);
-        LOGGER.info("Клиент " + client + " успешно залогинился!");
     }
 
     public void unsubscribe(ClientHandler client) {
         clients.remove(client);
-        LOGGER.info("Клиент " + client + " успешно разлогинился!");
     }
 
 

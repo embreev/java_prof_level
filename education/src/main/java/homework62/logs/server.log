@@ -1,3 +1,10 @@
-INFO  2019-02-24 00:20:14 [main] homework62.server.Server (Server.java:24) - Сервер запущен. Ожидаем клиентов...
-INFO  2019-02-24 00:20:35 [main] homework62.server.Server (Server.java:24) - Сервер запущен. Ожидаем клиентов...
-INFO  2019-02-24 00:26:25 [main] homework62.server.Server (Server.java:24) - Сервер запущен. Ожидаем клиентов...
+INFO  2019-02-24 01:27:54 [main] homework62.server.Server (Server.java:24) - Сервер запущен. Ожидаем клиентов...
+INFO  2019-02-24 01:28:11 [main] homework62.server.Server (Server.java:27) - Клиент подключился
+INFO  2019-02-24 01:28:11 [Thread-1] homework62.server.ClientHandler (ClientHandler.java:36) - Клиент nick1 успешно залогинился!
+INFO  2019-02-24 01:28:28 [Thread-1] homework62.server.ClientHandler (ClientHandler.java:49) - Клиент nick1 успешно разлогинился!
+INFO  2019-02-24 01:28:43 [main] homework62.server.Server (Server.java:27) - Клиент подключился
+INFO  2019-02-24 01:28:43 [Thread-2] homework62.server.ClientHandler (ClientHandler.java:41) - Неверный логин/пароль!!!
+INFO  2019-02-24 01:29:03 [Thread-2] homework62.server.ClientHandler (ClientHandler.java:36) - Клиент nick3 успешно залогинился!
+INFO  2019-02-24 01:29:16 [Thread-2] homework62.server.ClientHandler (ClientHandler.java:49) - Клиент nick3 успешно разлогинился!
+INFO  2019-02-24 01:29:25 [main] homework62.server.Server (Server.java:27) - Клиент подключился
+INFO  2019-02-24 01:29:25 [Thread-3] homework62.server.ClientHandler (ClientHandler.java:41) - Неверный логин/пароль!!!

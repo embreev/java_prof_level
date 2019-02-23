@@ -33,6 +33,7 @@ public class ClientHandler {
                             if(newNick != null) {
                                 sendMsg("/authok");
                                 nick = newNick;
+                                LOGGER.info("Клиент " + nick + " успешно залогинился!");
                                 server.subscribe(this);
                                 break;
                             } else {
@@ -45,6 +46,7 @@ public class ClientHandler {
                         String str = in.readUTF();
                         if(str.equals("/end")) {
                             out.writeUTF("/serverclosed");
+                            LOGGER.info("Клиент " + nick + " успешно разлогинился!");
                             break;
                         }
                         server.broadcastMsg(nick + ": " + str);
@@ -74,6 +76,10 @@ public class ClientHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String getNick() {
+        return nick;
     }
 
     public void sendMsg(String msg) {
