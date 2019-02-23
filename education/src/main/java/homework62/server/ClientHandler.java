@@ -37,6 +37,7 @@ public class ClientHandler {
                                 break;
                             } else {
                                 sendMsg("Неверный логин/пароль");
+                                LOGGER.info("Неверный логин/пароль!!!");
                             }
                         }
                     }

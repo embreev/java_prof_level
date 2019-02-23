@@ -21,11 +21,10 @@ public class Server {
         try {
             AuthService.connect();
             server = new ServerSocket(8189);
-            System.out.println("Сервер запущен. Ожидаем клиентов...");
             LOGGER.info("Сервер запущен. Ожидаем клиентов...");
             while (true) {
                 socket = server.accept();
-                System.out.println("Клиент подключился");
+                LOGGER.info("Клиент подключился");
                 new ClientHandler(this, socket);
                // clients.add(new ClientHandler(this, socket));
             }
@@ -48,10 +47,12 @@ public class Server {
 
     public void subscribe(ClientHandler client) {
         clients.add(client);
+        LOGGER.info("Клиент " + client + " успешно залогинился!");
     }
 
     public void unsubscribe(ClientHandler client) {
         clients.remove(client);
+        LOGGER.info("Клиент " + client + " успешно разлогинился!");
     }
 
 
