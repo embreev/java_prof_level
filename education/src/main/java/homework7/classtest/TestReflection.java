@@ -9,24 +9,26 @@ public class TestReflection {
         try {
             Class humanClass = Human.class;
 
-            //Get all constructors and params type
-            for (Constructor dc: humanClass.getDeclaredConstructors()) {
-                System.out.println(dc);
-                Class[] paramTypeConstructor = dc.getParameterTypes();
-                for (Class paramTypeC: paramTypeConstructor) {
-                    System.out.println(paramTypeC);
-                }
-            }
+//            //Get all constructors and params type
+//            for (Constructor dc: humanClass.getDeclaredConstructors()) {
+//                System.out.println(dc);
+//                Class[] paramTypeConstructor = dc.getParameterTypes();
+//                for (Class paramTypeC: paramTypeConstructor) {
+//                    System.out.println(paramTypeC);
+//                }
+//            }
 
             Constructor hConstructor = humanClass.getConstructor(String.class, int.class, int.class);
             Human h = (Human) hConstructor.newInstance("Robert", 25, 90000);
 
             //Get all methods
             for (Method dm : humanClass.getDeclaredMethods()) {
-                System.out.println(dm);
+                System.out.println("== Method: " + dm.getName());
+//                System.out.println(dm);
                 Class[] paramTypeMethod = dm.getParameterTypes();
                 for (Class paramTypeM: paramTypeMethod) {
-                    System.out.println(paramTypeM);
+                    System.out.println("---- Parameter type: " + paramTypeM.getName());
+//                    System.out.println(paramTypeM);
                 }
             }
 
