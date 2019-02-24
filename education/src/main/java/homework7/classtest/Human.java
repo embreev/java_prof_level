@@ -3,9 +3,9 @@ package homework7.classtest;
 public class Human {
     public String name;
     public int age;
-    private float salary;
+    private int salary;
 
-    public Human(String name, int age, float salary) {
+    public Human(String name, int age, int salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -27,12 +27,16 @@ public class Human {
         this.age = age;
     }
 
-    private float getSalary() {
+    private int getSalary() {
         return salary;
     }
 
-    private void setSalary(float salary) {
+    private void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public boolean getAgeLTThirty(Human human) {
+        return human.age < 30;
     }
 
     public void info() {
