@@ -34,4 +34,15 @@ public class Human {
     private void setSalary(float salary) {
         this.salary = salary;
     }
+
+    public void info() {
+        System.out.println("Name: " + name + "\t" + "Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        Human humanAlex = new Human("Alex", 25, 100000);
+        Human humanIvan = new Human("Ivan", 27, 120000);
+        humanAlex.info();
+        humanIvan.info();
+    }
 }
