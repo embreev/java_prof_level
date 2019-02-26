@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <title>About</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link rel="stylesheet" type="text/css"
@@ -19,8 +19,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/about">About</a></li>
                 <li><a href="/info">Info</a></li>
                 <li><a href="/test">Test</a></li>
             </ul>
@@ -33,8 +33,6 @@
         <h1>About</h1>
         <h2>
             <span th:text="'Message: Hello, ' + ${test_param} + '!'"></span>
-            <!--/*@thymesVar id="message" type="java.lang.String"*/-->
-            <!--<span th:text="'Message: Hello, ' + ${message.length()} + '!'"></span>-->
         </h2>
         <input id="newTestParam"/>
         <button id="btnHello">Send</button>

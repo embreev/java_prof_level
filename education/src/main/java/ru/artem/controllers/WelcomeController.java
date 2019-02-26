@@ -30,7 +30,7 @@ public class WelcomeController {
 
     @RequestMapping("/test")
     public String test(Map<String, Object> model) {
-        model.put("test_param", param);
+        model.put("print_console", param);
         return "test";
     }
 
@@ -43,6 +43,13 @@ public class WelcomeController {
     @RequestMapping(value = "/about/test_param", method = RequestMethod.POST)
     @ResponseBody
     public void addNewCustomer(@RequestParam("name_param") String nameParam) {
+        param = nameParam;
+        System.out.println(nameParam);
+    }
+
+    @RequestMapping(value = "/test/print_console", method = RequestMethod.POST)
+    @ResponseBody
+    public void printConsole(@RequestParam("name_param") String nameParam) {
         param = nameParam;
         System.out.println(nameParam);
     }
