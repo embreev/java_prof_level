@@ -22,6 +22,18 @@ public class WelcomeController {
         return "about";
     }
 
+    @RequestMapping("/info")
+    public String info(Map<String, Object> model) {
+        model.put("message", "Info");
+        return "info";
+    }
+
+    @RequestMapping("/test")
+    public String test(Map<String, Object> model) {
+        model.put("test_param", param);
+        return "test";
+    }
+
     @RequestMapping(value = "/printme/{data}", method = RequestMethod.GET)
     public String printme(Map<String, Object> model, @PathVariable("data") String data) {
         model.put("data", data);
